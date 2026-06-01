@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "2023 BMW 3 Series 330i",
+    "titleSr": "2023 BMW Serija 3 330i",
+    "url": "https://www.example.com/ad/bmw-330i",
+    "price": "€45,900",
+    "year": 2023,
+    "brand": "BMW",
+    "imageUrl": "",
+    "featured": true,
+    "createdAt": "2026-06-09T15:18:46.992Z"
+  },
+  {
+    "id": "2",
+    "title": "2022 BMW X5 xDrive40i",
+    "titleSr": "2022 BMW X5 xDrive40i",
+    "url": "https://www.example.com/ad/bmw-x5",
+    "price": "€72,000",
+    "year": 2022,
+    "brand": "BMW",
+    "imageUrl": "",
+    "featured": false,
+    "createdAt": "2026-06-09T15:18:46.992Z"
+  },
+  {
+    "id": "3",
+    "title": "2021 BMW M4 Competition",
+    "titleSr": "2021 BMW M4 Kompetišn",
+    "url": "https://www.example.com/ad/bmw-m4",
+    "price": "€89,500",
+    "year": 2021,
+    "brand": "BMW",
+    "imageUrl": "",
+    "featured": true,
+    "createdAt": "2026-06-09T15:18:46.992Z"
+  }
+]
