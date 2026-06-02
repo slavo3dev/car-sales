@@ -1,6 +1,8 @@
 'use client';
 import { useLang } from './LangProvider';
 
+const BMW_BLUE = '#1c69d4';
+
 export default function Hero() {
 	const { t, theme } = useLang();
 	const dark = theme === 'dark';
@@ -27,11 +29,11 @@ export default function Hero() {
 
 			{/* Radial */}
 			<div
-				className='absolute inset-0 transition-opacity duration-300'
+				className='absolute inset-0'
 				style={{
 					background: dark
-						? 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%)'
-						: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,0,0,0.04) 0%, transparent 70%)',
+						? 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%)'
+						: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,0,0,0.03) 0%, transparent 70%)',
 				}}
 			/>
 
@@ -39,61 +41,58 @@ export default function Hero() {
 				{/* Eyebrow */}
 				<div className='flex items-center justify-center gap-4 mb-10 animate-fade-in'>
 					<div
-						className='h-px w-12 transition-colors'
+						className='h-px w-12'
 						style={{
 							background: dark
-								? 'rgba(255,255,255,0.2)'
-								: 'rgba(0,0,0,0.15)',
+								? 'rgba(255,255,255,0.18)'
+								: 'rgba(0,0,0,0.13)',
 						}}
 					/>
 					<p
-						className='text-[10px] tracking-[0.45em] uppercase transition-colors'
+						className='text-[10px] tracking-[0.45em] uppercase'
 						style={{
 							color: dark
-								? 'rgba(255,255,255,0.4)'
-								: 'rgba(0,0,0,0.4)',
+								? 'rgba(255,255,255,0.38)'
+								: 'rgba(0,0,0,0.38)',
 						}}>
 						{t.hero.eyebrow}
 					</p>
 					<div
-						className='h-px w-12 transition-colors'
+						className='h-px w-12'
 						style={{
 							background: dark
-								? 'rgba(255,255,255,0.2)'
-								: 'rgba(0,0,0,0.15)',
+								? 'rgba(255,255,255,0.18)'
+								: 'rgba(0,0,0,0.13)',
 						}}
 					/>
 				</div>
 
 				{/* Headline */}
 				<h1
-					className='text-[52px] md:text-[80px] lg:text-[96px] leading-[0.95] tracking-[-0.03em] mb-8 animate-fade-up transition-colors'
+					className='leading-[0.95] mb-8 animate-fade-up transition-colors'
 					style={{
+						fontSize: 'clamp(48px, 9vw, 96px)',
 						fontWeight: 200,
-						color: dark ? '#ffffff' : '#0a0a0a',
 						letterSpacing: '-0.03em',
+						color: dark ? '#ffffff' : '#0a0a0a',
 					}}>
 					{t.hero.headline}
 				</h1>
 
-				{/* Divider */}
+				{/* BMW blue accent rule */}
 				<div className='flex items-center justify-center mb-8 animate-fade-up delay-100'>
 					<div
-						className='h-px w-20 transition-colors'
-						style={{
-							background: dark
-								? 'rgba(255,255,255,0.15)'
-								: 'rgba(0,0,0,0.12)',
-						}}
+						className='h-px w-16'
+						style={{ background: BMW_BLUE }}
 					/>
 				</div>
 
 				{/* Sub */}
 				<p
-					className='text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto mb-12 animate-fade-up delay-200 transition-colors'
+					className='text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto mb-12 animate-fade-up delay-200'
 					style={{
 						color: dark
-							? 'rgba(255,255,255,0.45)'
+							? 'rgba(255,255,255,0.44)'
 							: 'rgba(0,0,0,0.5)',
 					}}>
 					{t.hero.sub}
@@ -104,15 +103,12 @@ export default function Hero() {
 					<button
 						onClick={() => scrollTo('listings')}
 						className='px-9 py-4 text-[11px] font-medium tracking-[0.22em] uppercase transition-all duration-200'
-						style={{
-							background: dark ? 'white' : '#0a0a0a',
-							color: dark ? '#0a0a0a' : 'white',
-						}}
+						style={{ background: BMW_BLUE, color: 'white' }}
 						onMouseEnter={(e) =>
-							(e.currentTarget.style.opacity = '0.88')
+							(e.currentTarget.style.background = '#1558b8')
 						}
 						onMouseLeave={(e) =>
-							(e.currentTarget.style.opacity = '1')
+							(e.currentTarget.style.background = BMW_BLUE)
 						}>
 						{t.hero.cta}
 					</button>
@@ -129,12 +125,8 @@ export default function Hero() {
 							background: 'transparent',
 						}}
 						onMouseEnter={(e) => {
-							e.currentTarget.style.borderColor = dark
-								? 'rgba(255,255,255,0.6)'
-								: 'rgba(0,0,0,0.5)';
-							e.currentTarget.style.color = dark
-								? 'white'
-								: 'black';
+							e.currentTarget.style.borderColor = BMW_BLUE;
+							e.currentTarget.style.color = BMW_BLUE;
 						}}
 						onMouseLeave={(e) => {
 							e.currentTarget.style.borderColor = dark
@@ -149,14 +141,12 @@ export default function Hero() {
 				</div>
 			</div>
 
-			{/* Scroll cue */}
+			{/* Scroll indicator — blue */}
 			<div className='absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2'>
 				<div
-					className='w-px h-14 animate-pulse transition-colors'
+					className='w-px h-14 animate-pulse'
 					style={{
-						background: dark
-							? 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.3))'
-							: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.2))',
+						background: `linear-gradient(to bottom, transparent, ${BMW_BLUE})`,
 					}}
 				/>
 			</div>

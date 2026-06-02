@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useLang } from './LangProvider';
 
+const BMW_BLUE = '#1c69d4';
+
 export default function Contact() {
 	const { t, theme } = useLang();
 	const dark = theme === 'dark';
@@ -32,7 +34,7 @@ export default function Contact() {
 		}
 	};
 
-	const inputStyle = {
+	const inputStyle: React.CSSProperties = {
 		background: 'transparent',
 		border: dark
 			? '1px solid rgba(255,255,255,0.1)'
@@ -48,9 +50,7 @@ export default function Contact() {
 	const onFocus = (
 		e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
-		e.target.style.borderColor = dark
-			? 'rgba(255,255,255,0.45)'
-			: 'rgba(0,0,0,0.45)';
+		e.target.style.borderColor = BMW_BLUE;
 	};
 	const onBlur = (
 		e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -74,7 +74,7 @@ export default function Contact() {
 				{/* Left */}
 				<div>
 					<p
-						className='text-[10px] tracking-[0.4em] uppercase mb-4 transition-colors'
+						className='text-[10px] tracking-[0.4em] uppercase mb-4'
 						style={{
 							color: dark
 								? 'rgba(255,255,255,0.28)'
@@ -83,12 +83,12 @@ export default function Contact() {
 						Contact
 					</p>
 					<h2
-						className='text-4xl md:text-5xl font-extralight tracking-tight mb-6 transition-colors'
+						className='text-4xl md:text-5xl font-extralight tracking-tight mb-6'
 						style={{ color: dark ? 'white' : '#0a0a0a' }}>
 						{t.contact.title}
 					</h2>
 					<p
-						className='font-light leading-relaxed max-w-sm text-[15px] transition-colors'
+						className='font-light leading-relaxed max-w-sm text-[15px]'
 						style={{
 							color: dark
 								? 'rgba(255,255,255,0.4)'
@@ -98,16 +98,13 @@ export default function Contact() {
 					</p>
 
 					<div className='mt-16 hidden lg:block'>
+						{/* BMW blue accent */}
 						<div
-							className='w-12 h-px mb-6 transition-colors'
-							style={{
-								background: dark
-									? 'rgba(255,255,255,0.15)'
-									: 'rgba(0,0,0,0.12)',
-							}}
+							className='w-10 h-px mb-6'
+							style={{ background: BMW_BLUE }}
 						/>
 						<p
-							className='text-[10px] tracking-[0.35em] uppercase transition-colors'
+							className='text-[10px] tracking-[0.35em] uppercase'
 							style={{
 								color: dark
 									? 'rgba(255,255,255,0.18)'
@@ -178,16 +175,13 @@ export default function Contact() {
 						<button
 							onClick={handleSubmit}
 							disabled={status === 'sending'}
-							className='px-8 py-4 text-[11px] font-medium tracking-[0.22em] uppercase transition-all disabled:opacity-50'
-							style={{
-								background: dark ? 'white' : '#0a0a0a',
-								color: dark ? '#0a0a0a' : 'white',
-							}}
+							className='px-8 py-4 text-[11px] font-medium tracking-[0.22em] uppercase transition-all duration-200 disabled:opacity-50'
+							style={{ background: BMW_BLUE, color: 'white' }}
 							onMouseEnter={(e) =>
-								(e.currentTarget.style.opacity = '0.85')
+								(e.currentTarget.style.background = '#1558b8')
 							}
 							onMouseLeave={(e) =>
-								(e.currentTarget.style.opacity = '1')
+								(e.currentTarget.style.background = BMW_BLUE)
 							}>
 							{status === 'sending'
 								? t.contact.sending

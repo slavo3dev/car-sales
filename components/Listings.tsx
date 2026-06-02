@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useLang } from './LangProvider';
 import type { CarAd } from '@/lib/ads-store';
 
+const BMW_BLUE = '#1c69d4';
+
 function ArrowIcon() {
 	return (
 		<svg width='13' height='13' viewBox='0 0 13 13' fill='none'>
@@ -42,8 +44,8 @@ function CarCard({
 			style={{
 				background: hovered
 					? dark
-						? 'rgba(255,255,255,0.04)'
-						: 'rgba(0,0,0,0.03)'
+						? 'rgba(255,255,255,0.03)'
+						: 'rgba(0,0,0,0.02)'
 					: 'transparent',
 			}}>
 			{/* Image */}
@@ -57,13 +59,8 @@ function CarCard({
 				{ad.featured && (
 					<div className='absolute top-3 left-3 z-10'>
 						<span
-							className='text-[9px] tracking-[0.2em] uppercase px-2 py-1'
-							style={{
-								background: dark
-									? 'rgba(255,255,255,0.9)'
-									: 'rgba(0,0,0,0.85)',
-								color: dark ? '#0a0a0a' : 'white',
-							}}>
+							className='text-[9px] tracking-[0.2em] uppercase px-2 py-1 font-medium'
+							style={{ background: BMW_BLUE, color: 'white' }}>
 							{t.featured}
 						</span>
 					</div>
@@ -102,7 +99,7 @@ function CarCard({
 				<div>
 					{ad.brand && (
 						<p
-							className='text-[10px] tracking-[0.3em] uppercase mb-1.5 transition-colors'
+							className='text-[10px] tracking-[0.3em] uppercase mb-1.5'
 							style={{
 								color: dark
 									? 'rgba(255,255,255,0.3)'
@@ -112,7 +109,7 @@ function CarCard({
 						</p>
 					)}
 					<h3
-						className='font-light text-[15px] leading-snug transition-colors'
+						className='font-light text-[15px] leading-snug'
 						style={{
 							color: dark
 								? 'rgba(255,255,255,0.9)'
@@ -123,7 +120,7 @@ function CarCard({
 				</div>
 
 				<div
-					className='flex items-center justify-between mt-auto pt-4 transition-colors'
+					className='flex items-center justify-between mt-auto pt-4'
 					style={{
 						borderTop: dark
 							? '1px solid rgba(255,255,255,0.07)'
@@ -132,7 +129,7 @@ function CarCard({
 					<div className='flex items-center gap-3'>
 						{ad.year && (
 							<span
-								className='text-xs transition-colors'
+								className='text-xs'
 								style={{
 									color: dark
 										? 'rgba(255,255,255,0.35)'
@@ -143,22 +140,21 @@ function CarCard({
 						)}
 						{ad.price && (
 							<span
-								className='text-sm font-medium transition-colors'
+								className='text-sm font-medium'
 								style={{ color: dark ? 'white' : '#0a0a0a' }}>
 								{ad.price}
 							</span>
 						)}
 					</div>
+					{/* Blue on hover */}
 					<span
-						className='flex items-center gap-1.5 text-[10px] tracking-widest uppercase transition-colors'
+						className='flex items-center gap-1.5 text-[10px] tracking-widest uppercase transition-colors duration-200'
 						style={{
 							color: hovered
-								? dark
-									? 'white'
-									: 'black'
+								? BMW_BLUE
 								: dark
-									? 'rgba(255,255,255,0.4)'
-									: 'rgba(0,0,0,0.4)',
+									? 'rgba(255,255,255,0.35)'
+									: 'rgba(0,0,0,0.35)',
 						}}>
 						{t.viewAd} <ArrowIcon />
 					</span>
@@ -197,7 +193,7 @@ export default function Listings() {
 					}}>
 					<div>
 						<p
-							className='text-[10px] tracking-[0.4em] uppercase mb-3 transition-colors'
+							className='text-[10px] tracking-[0.4em] uppercase mb-3'
 							style={{
 								color: dark
 									? 'rgba(255,255,255,0.28)'
@@ -206,13 +202,13 @@ export default function Listings() {
 							{ads.length} {lang === 'sr' ? 'vozila' : 'vehicles'}
 						</p>
 						<h2
-							className='text-4xl md:text-5xl font-extralight tracking-tight transition-colors'
+							className='text-4xl md:text-5xl font-extralight tracking-tight'
 							style={{ color: dark ? 'white' : '#0a0a0a' }}>
 							{t.listings.title}
 						</h2>
 					</div>
 					<p
-						className='text-sm font-light max-w-xs leading-relaxed transition-colors'
+						className='text-sm font-light max-w-xs leading-relaxed'
 						style={{
 							color: dark
 								? 'rgba(255,255,255,0.38)'
