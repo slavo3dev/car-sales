@@ -1,6 +1,18 @@
 [
   {
     "id": "1",
+    "title": "2024 Mercedes-Benz GLE 350 4Matic Restyle",
+    "titleSr": "2024 Mercedes-Benz GLE 350 4Matic Restajling",
+    "url": "https://www.polovniautomobili.com/auto-oglasi/28821721/mercedes-benz-gle-350-4matic-restyle",
+    "price": "€79,900",
+    "year": 2024,
+    "brand": "Mercedes-Benz",
+    "imageUrl": "https://gcdn.polovniautomobili.com/user-images/thumbs/2882/28821721/2874a917c149-800x600.jpg",
+    "featured": true,
+    "createdAt": "2026-06-09T15:18:46.992Z"
+  },
+  {
+    "id": "3",
     "title": "2023 BMW 3 Series 330i",
     "titleSr": "2023 BMW Serija 3 330i",
     "url": "https://www.example.com/ad/bmw-330i",
@@ -12,7 +24,7 @@
     "createdAt": "2026-06-09T15:18:46.992Z"
   },
   {
-    "id": "2",
+    "id": "4",
     "title": "2022 BMW X5 xDrive40i",
     "titleSr": "2022 BMW X5 xDrive40i",
     "url": "https://www.example.com/ad/bmw-x5",
@@ -24,7 +36,19 @@
     "createdAt": "2026-06-09T15:18:46.992Z"
   },
   {
-    "id": "3",
+    "id": "2",
+    "title": "2020 Mercedes-Benz GLS 450 4Matic Maybach Style",
+    "titleSr": "2020 Mercedes-Benz GLS 450 4Matic Majbah Stil",
+    "url": "https://www.polovniautomobili.com/auto-oglasi/28819375/mercedes-benz-gls-450-4matic-maybach-style",
+    "price": "€67,900",
+    "year": 2020,
+    "brand": "Mercedes-Benz",
+    "imageUrl": "https://gcdn.polovniautomobili.com/user-images/thumbs/2881/28819375/66e5ca5a5e5c-800x600.jpg",
+    "featured": true,
+    "createdAt": "2026-06-09T15:18:46.992Z"
+  },
+  {
+    "id": "5",
     "title": "2021 BMW M4 Competition",
     "titleSr": "2021 BMW M4 Kompetišn",
     "url": "https://www.example.com/ad/bmw-m4",
