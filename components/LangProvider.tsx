@@ -19,16 +19,16 @@ interface LangCtx {
 }
 
 const LangContext = createContext<LangCtx>({
-	lang: 'en',
+	lang: 'sr',
 	setLang: () => {},
-	theme: 'dark',
+	theme: 'light',
 	setTheme: () => {},
-	t: translations.en,
+	t: translations.sr,
 });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-	const [lang, setLang] = useState<Lang>('en');
-	const [theme, setTheme] = useState<Theme>('dark');
+	const [lang, setLang] = useState<Lang>('sr');
+	const [theme, setTheme] = useState<Theme>('light');
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme);
