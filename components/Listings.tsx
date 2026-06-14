@@ -180,9 +180,66 @@ export default function Listings() {
 	return (
 		<section
 			id='listings'
-			className='py-28 px-6 transition-colors duration-300'
+			className='transition-colors duration-300'
 			style={{ background: dark ? '#0a0a0a' : '#ffffff' }}>
-			<div className='max-w-7xl mx-auto'>
+			{/* Headline — replaces the removed hero, now first thing visible */}
+			<div className='max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-20'>
+				<div
+					className='mb-6 flex items-center gap-3'
+					aria-hidden='true'>
+					<span
+						style={{
+							display: 'inline-block',
+							width: 28,
+							height: 2,
+							background: BMW_BLUE,
+						}}
+					/>
+					<p
+						className='text-[10px] tracking-[0.4em] uppercase'
+						style={{
+							color: dark
+								? 'rgba(255,255,255,0.4)'
+								: 'rgba(0,0,0,0.4)',
+						}}>
+						MotorSelect
+					</p>
+				</div>
+
+				<h1
+					className='text-5xl md:text-7xl font-extralight tracking-tight leading-[1.05] max-w-3xl'
+					style={{ color: dark ? 'white' : '#0a0a0a' }}>
+					{lang === 'sr' ? (
+						<>
+							Vozila koja{' '}
+							<span style={{ color: BMW_BLUE }}>zaslužuju</span>{' '}
+							pažnju.
+						</>
+					) : (
+						<>
+							Vehicles worth{' '}
+							<span style={{ color: BMW_BLUE }}>
+								your attention
+							</span>
+							.
+						</>
+					)}
+				</h1>
+
+				<p
+					className='mt-6 text-base md:text-lg font-light max-w-xl leading-relaxed'
+					style={{
+						color: dark
+							? 'rgba(255,255,255,0.5)'
+							: 'rgba(0,0,0,0.5)',
+					}}>
+					{lang === 'sr'
+						? 'Pažljivo odabrana ponuda premium vozila, provereni izvori i jasne informacije bez nepotrebnih komplikacija.'
+						: 'A carefully curated selection of premium vehicles, verified sources, and clear information without unnecessary complications.'}
+				</p>
+			</div>
+
+			<div className='max-w-7xl mx-auto px-6 pb-28'>
 				{/* Header */}
 				<div
 					className='mb-16 pb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4'
